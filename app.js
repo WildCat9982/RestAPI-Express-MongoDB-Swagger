@@ -11,6 +11,9 @@ app.use(express.urlencoded({extended: false}))
 // allows cors requests from any origin and with credential:
 app.use(cors({ origin: (origin, callback) => callback(null, true), credeitals: false}))
 
+// Swagger API Document
+app.use('/api-doc', require('./_helpers/swagger'))
+
 // user routes
 app.use('/users', require('./users/user.route'))
 
